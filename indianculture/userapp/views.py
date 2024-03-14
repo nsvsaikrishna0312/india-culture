@@ -62,6 +62,8 @@ def item(request,title,category):
         return render(request,'dance.html',{'dance': item})
     elif category == "Cuisines":
         return render(request,'cuisine.html',{'cuisine':item})
+    elif category == "religions":
+        return render(request,'religion.html',{'religion':item})
 
 def map(request):
     return render(request,'maps.html')

@@ -217,6 +217,7 @@ button:hover{
 				   {% for religion in allindians %}
                 {% if religion.category|lower == "religions" %}
 				<li>
+                    <a href="{% url 'item' religion.title religion.category %}">
 
                         <div class="slide">
                             <img src="{{ religion.image1.url }}" class="slideimg" />
@@ -224,6 +225,7 @@ button:hover{
                                 <p>{{ religion.title }}</p>
                             </div>
                         </div>
+                    </a>
                 </li>
 				{% endif %}
                 {% endfor %}
