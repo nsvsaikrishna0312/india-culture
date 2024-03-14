@@ -256,13 +256,14 @@ button:hover{
 				   {% for festival in allindians %}
                 {% if festival.category|lower == "festivals" %}
 				<li>
-
+                   <a href="{% url 'item' festival.title festival.category %}">
                         <div class="slide">
                             <img src="{{ festival.image1.url }}" class="slideimg" />
                             <div class="slide_content">
                                 <p>{{ festival.title }}</p>
                             </div>
                         </div>
+                   </a>
                 </li>
 				{% endif %}
                 {% endfor %}
@@ -294,6 +295,7 @@ button:hover{
 				  {% for clothing in allindians %}
                 {% if clothing.category|lower == "clothings" %}
 				<li>
+                   <a href="{% url 'item' clothing.title clothing.category %}">
 
                         <div class="slide">
                             <img src="{{ clothing.image1.url }}" class="slideimg" />
@@ -301,6 +303,7 @@ button:hover{
                                 <p>{{ clothing.title }}</p>
                             </div>
                         </div>
+                   </a>
                 </li>
 				{% endif %}
                 {% endfor %}

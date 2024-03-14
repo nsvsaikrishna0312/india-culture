@@ -58,12 +58,25 @@ def logout(request):
 def item(request,title,category):
     item = get_object_or_404(Indian,title=title)
     if category == "Dances":
-        item.content3 = re.sub(r'\s{3}', '\n', item.content3)
         return render(request,'dance.html',{'dance': item})
     elif category == "Cuisines":
         return render(request,'cuisine.html',{'cuisine':item})
     elif category == "religions":
         return render(request,'religion.html',{'religion':item})
+    elif category == "festivals":
+        return render(request,'festival.html',{'festival':item})
+    elif category == "clothings":
+        return render(request,'clothing.html',{'clothing':item})
+    elif category == "languages":
+        return render(request,'language.html',{'language':item})
+    elif category == "holy book":
+        return render(request,'holybooks.html',{'holybook':item})
+    elif category == "Arts and Crafts":
+        return render(request,'artsandcrafts.html',{'arts':item})
+    elif category == "Ayurveda and Traditional Medicine":
+        return render(request,'ayurveda.html',{'ayurveda':item})
+    elif category == "Sports and Games":
+        return render(request,'sports.html',{'sport':item})
 
 def map(request):
     return render(request,'maps.html')
